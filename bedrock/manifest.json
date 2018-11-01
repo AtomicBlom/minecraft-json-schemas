@@ -15,19 +15,19 @@
           "description": {
             "$id": "/properties/header/properties/description",
             "type": "string",
-            "title": "Minecraft Bedrock Pack Description",
+            "title": "Pack description",
             "default": ""
           },
           "name": {
             "$id": "/properties/header/properties/name",
             "type": "string",
-            "title": "Minecraft Bedrock Pack Name",
+            "title": "Pack name",
             "default": ""
           },
           "uuid": {
             "$id": "/properties/header/properties/uuid",
             "type": "string",
-            "title": "Minecraft Bedrock Pack UUID",
+            "title": "Pack UUID",
             "default": "00000000-0000-0000-0000-000000000000",
             "pattern": "^[0-9A-F]{8}[-]?(?:[0-9A-F]{4}[-]?){3}[0-9A-F]{12}$"
           },
@@ -36,10 +36,10 @@
             "type": "array",
             "minItems": 3,
             "maxItems": 3,
+            "title": "Pack Version",
             "items": {
               "$id": "/properties/header/properties/version/items",
               "type": "integer",
-              "title": "Minecraft Bedrock Version",
               "default": 0
             }
           }
@@ -70,13 +70,14 @@
               "title": "Minecraft Bedrock Manifest Pack Type",
               "enum": [
                   "resources",
-                  "data"
+                  "data",
+                  "client_data"
               ]
             },
             "uuid": {
               "$id": "/properties/modules/items/properties/uuid",
               "type": "string",
-              "title": "Minecraft Bedrock Pack UUID",
+              "title": "Minecraft Bedrock Module UUID",
               "default": "00000000-0000-0000-0000-000000000000",
               "pattern": "^[0-9A-F]{8}[-]?(?:[0-9A-F]{4}[-]?){3}[0-9A-F]{12}$"
             },
@@ -88,7 +89,7 @@
               "items": {
                 "$id": "/properties/modules/items/properties/version/items",
                 "type": "integer",
-                "title": "Minecraft Bedrock Subpack",
+                "title": "Version Number",
                 "default": 0,
                 "examples": [
                   16,
@@ -146,5 +147,9 @@
           ]
         }
       }
-    }
+    },
+    "required": [
+      "format_version",
+      "header"
+    ]
   }
