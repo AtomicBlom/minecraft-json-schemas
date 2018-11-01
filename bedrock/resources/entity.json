@@ -1,13 +1,26 @@
 {
     "$schema": "http://json-schema.org/schema#",
     "$id": "https://raw.githubusercontent.com/AtomicBlom/minecraft-json-schemas/bedrock/bedrock/resources/entity.json",
-    "allOf": [
-        {
-            "$ref": "https://raw.githubusercontent.com/AtomicBlom/minecraft-json-schemas/bedrock/bedrock/definitions.json"
-        }
-    ],
     "type": "object",
     "additionalProperties": false,
+    "definitions": {
+        "minecraftIdentifier": {
+            "type": "string",
+            "pattern": "^[a-z_0-9]+:[a-z_0-9]+$"
+        },
+        "filePath": {
+            "type": "string",
+            "pattern": "^[a-z0-9_\/]+$"
+        },
+        "color": {
+            "type": "string",
+            "pattern": "^#[a-fA-F0-9]{6}$"
+        },
+        "externalReference": {
+            "type": "string",
+            "pattern": "^[a-z0-9_.]+$"
+        }
+    },
     "properties": {
         "format_version": {
             "$id": "/properties/format_version",

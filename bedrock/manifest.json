@@ -1,13 +1,29 @@
 {
   "$schema": "http://json-schema.org/schema#",
   "$id": "https://raw.githubusercontent.com/AtomicBlom/minecraft-json-schemas/bedrock/bedrock/manifest.json",
-  "allOf": [
-    {
-      "$ref": "https://raw.githubusercontent.com/AtomicBlom/minecraft-json-schemas/bedrock/bedrock/definitions.json"
-    }
-  ],
   "type": "object",
   "additionalProperties": false,
+  "definitions": {
+    "uuid": {
+      "type": "string",
+      "pattern": "^[0-9A-F]{8}[-]?(?:[0-9A-F]{4}[-]?){3}[0-9A-F]{12}$",
+      "default": "00000000-0000-0000-0000-000000000000"
+    },
+    "version": {
+      "type": "array",
+      "maxItems": 3,
+      "minItems": 3,
+      "items": {
+        "type": "integer",
+        "default": 0,
+        "examples": [
+          16,
+          0,
+          0
+        ]
+      }
+    }
+  },
   "properties": {
     "format_version": {
       "$id": "/properties/format_version",
