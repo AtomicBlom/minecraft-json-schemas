@@ -1,0 +1,76 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://raw.githubusercontent.com/AtomicBlom/minecraft-json-schemas/bedrock/bedrock/resources/animation_controller.json",
+    "type": "object",
+    "title": "AnimationController",
+    "definitions": {
+    },
+    "properties": {
+        "format_version": {
+            "type": "string"
+        },
+        "animation_controllers": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "states": {
+                        "additionalProperties": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "animations": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "anyOf": [
+                                        {            
+                                                "type": "object",
+                                                "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "additionalProperties": {
+                                                    "type": "number"
+                                                },
+                                                "propertyNames": {
+                                                    "type": "string",
+                                                    "pattern": "^[0-9.]+$"
+                                                }
+                                            }
+                                        }
+                                    ]                                
+                                }    
+                                },
+                                "parameters": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "transitions": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "additionalProperties": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "states"
+                ]
+            }
+        }
+    },
+    "required": [
+        "format_version",
+        "animation_controllers"
+    ]
+}
