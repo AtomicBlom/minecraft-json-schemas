@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://raw.githubusercontent.com/AtomicBlom/minecraft-json-schemas/bedrock/bedrock/definitions.json",
+    "definitions": {
+        "minecraftIdentifier": {
+            "type": "string",
+            "pattern": "^[a-z_0-9]+:[a-z_0-9]+$"
+        },
+        "filePath": {
+            "type": "string",
+            "pattern": "^[a-z0-9_\/]+$"
+        },
+        "color": {
+            "type": "string",
+            "pattern": "^#[a-fA-F0-9]{6}$"
+        },
+        "externalReference": {
+            "type": "string",
+            "pattern": "^[a-z0-9_.]+$"
+        },
+        "uuid": {
+            "type": "string",
+            "pattern": "^[0-9A-F]{8}[-]?(?:[0-9A-F]{4}[-]?){3}[0-9A-F]{12}$",
+            "default": "00000000-0000-0000-0000-000000000000"
+        },
+        "version": {
+            "type": "array",
+            "maxItems": 3,
+            "minItems": 3,
+            "items": {
+                "type": "integer",
+                "default": 0,
+                "examples": [
+                    16,
+                    0,
+                    0
+                ]
+            }
+        }
+    }
+}
